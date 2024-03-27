@@ -385,3 +385,391 @@ header {
     margin-top: 20px;
   }
   
+  @media screen and (max-width: 768px) {
+    /* styles.css */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* Header Section */
+    header {
+      background-image: url('gradient.jpg'); /* Replace 'working.gif' with the path to your gif */
+      background-size: cover;
+      background-position: center;
+      
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: "Workbench", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "BLED" 0,
+      "SCAN" 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      font-family: "Workbench", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "BLED" 0,
+      "SCAN" 0;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: #000000;
+      text-decoration: none;
+      padding: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #555;
+    }
+
+    #hero {
+      background-color: #333;
+      color: #fff;
+      padding: 100px 0;
+    }
+
+    .hero-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-text {
+      max-width: 60%;
+      font-family: "Merienda", cursive;
+      font-optical-sizing: auto;
+      font-weight: <weight>;
+      font-style: normal;
+    }
+
+    .hero-image img {
+      max-width: 40%;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    section {
+      padding: 40px 0;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    footer p {
+      margin: 0;
+    }
+    /* Portfolio Section */
+    #portfolio {
+      background-image: url('software.gif'); /* Replace 'hero-background.gif' with the path to your gif */
+    background-size: cover;
+    background-position: center;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    }
+
+    .portfolio-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .portfolio-item {
+      flex: 0 0 calc(50% - 20px); /* Adjust width as needed */
+      margin-bottom: 40px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .portfolio-item h3 {
+      margin-top: 0;
+    }
+
+    .portfolio-item p {
+      margin-bottom: 20px;
+    }
+
+    .github-link {
+      display: inline-block;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .github-link:hover {
+      background-color: #555;
+    }
+
+
+    /* Education Section */
+    #education {
+      background-image: url('studying.jpg'); /* Replace 'working.gif' with the path to your gif */
+      background-size: cover;
+      background-position: center;
+      color: #fff; /* Light text color */
+      padding: 80px 0;
+      font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    }
+
+    .education-item {
+      margin-bottom: 40px;
+    }
+
+    .education-box {
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+      border-radius: 10px; /* Rounded corners */
+      padding: 20px; /* Padding inside the box */
+      display: flex;
+      align-items: center;
+    }
+
+    .university-logo img {
+      max-width: 100px;
+      margin-right: 20px;
+    }
+
+    .education-description h3 {
+      margin-top: 0;
+      font-family: "Merienda", cursive;
+      font-optical-sizing: auto;
+      font-weight: <weight>;
+      font-style: normal;
+    }
+
+    .education-description p {
+      margin-bottom: 20px;
+      font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    }
+
+    /* Work Experience Section */
+    #work-experience {
+      background-image: url('working.jpg'); /* Replace 'working.gif' with the path to your gif */
+      background-size: cover;
+      background-position: center;
+      color: #fff; /* Light text color */
+      padding: 80px 0;
+      font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    }
+
+    .work-experience-item {
+      margin-bottom: 40px;
+    }
+
+    .work-experience-box {
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+      border-radius: 10px; /* Rounded corners */
+      padding: 20px; /* Padding inside the box */
+      display: flex;
+      align-items: center;
+    }
+
+    .company-logo img {
+      max-width: 100px;
+      margin-right: 20px;
+    }
+
+    .job-description h3 {
+      margin-top: 0;
+    }
+
+    .job-description p {
+      margin-bottom: 20px;
+    }
+
+    /* Contact Section */
+    #contact {
+      background-color: #333;
+      color: #fff;
+      padding: 80px 0;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .contact-item {
+      margin: 0 20px;
+      text-align: center;
+    }
+
+    .contact-item p {
+      margin: 0; /* Remove default margin from paragraph */
+    }
+
+    .contact-item a,
+    .contact-item p {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    #about {
+      background-image: url('bright.jpeg'); /* Replace 'working.gif' with the path to your gif */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      float: right;
+    }
+
+    .about-content h3 {
+      font-size: 24px; /* Larger font size for section headings */
+      margin-bottom: 10px; /* Add some spacing below headings */
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+      float:right; /* Add some spacing between paragraphs */
+    }
+    .about-image img {
+      max-width:  400px; /* Adjust the width of the image as desired */
+      float: left; /* Float the image to the right *//* Add some spacing to the left of the image */
+    }
+
+    .skills-content {
+      clear: both; /* Clear the float to ensure proper alignment */
+    }
+
+    .skills-content h3 {
+      font-size: 24px; /* Larger font size for section heading */
+      margin-bottom: 20px; /* Add some spacing below the section heading */
+    }
+
+    .skills-content h4 {
+      font-size: 20px; /* Larger font size for skill categories */
+      margin-bottom: 10px; /* Add some spacing below skill categories */
+    }
+
+    .skills-content ul {
+      list-style-type: none; /* Remove bullet points from skills list */
+      padding-left: 0; /* Remove default padding */
+    }
+
+    .skills-content li {
+      margin-bottom: 5px; /* Add some spacing between individual skills */
+      background-color: #f4f4f4; /* Light gray background */
+      padding: 10px; /* Add padding to each skill item */
+      border-radius: 5px; /* Add rounded corners */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    }
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-category {
+      background: linear-gradient(135deg, #3494e6, #ec6ead); /* Adjust the colors as desired */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: #fff; /* Text color for better contrast */
+    }
+
+    .skill-category h4 {
+      font-size: 18px;
+      margin-top: 0;
+    }
+
+    .skill-category ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .skill-category ul li {
+      margin-bottom: 5px;
+      color: #000000; /* Text color */
+      font-size: 16px; /* Font size */
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #response {
+      margin-top: 20px;
+    }
+}
