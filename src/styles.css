@@ -12,7 +12,7 @@ body {
   }
  /* Header Section */
 header {
-    background-image: url('gradient.jpg'); /* Replace 'working.gif' with the path to your gif */
+    background-image: url(../images/gradient.jpg); /* Replace 'working.gif' with the path to your gif */
     background-size: cover;
     background-position: center;
     
@@ -105,7 +105,7 @@ header {
   }
  /* Portfolio Section */
 #portfolio {
-    background-image: url('software.gif'); /* Replace 'hero-background.gif' with the path to your gif */
+    background-image: url('../images/software.gif'); /* Replace 'hero-background.gif' with the path to your gif */
   background-size: cover;
   background-position: center;
   font-family: "Josefin Sans", sans-serif;
@@ -154,7 +154,7 @@ header {
 
 /* Education Section */
 #education {
-    background-image: url('studying.jpg'); /* Replace 'working.gif' with the path to your gif */
+    background-image: url('../images/studying.jpg'); /* Replace 'working.gif' with the path to your gif */
     background-size: cover;
     background-position: center;
     color: #fff; /* Light text color */
@@ -200,7 +200,7 @@ header {
 
 /* Work Experience Section */
 #work-experience {
-    background-image: url('working.jpg'); /* Replace 'working.gif' with the path to your gif */
+    background-image: url('../images/working.jpg'); /* Replace 'working.gif' with the path to your gif */
     background-size: cover;
     background-position: center;
     color: #fff; /* Light text color */
@@ -269,7 +269,7 @@ header {
   }
 
   #about {
-    background-image: url('bright.jpeg'); /* Replace 'working.gif' with the path to your gif */
+    background-image: url('../images/bright.jpeg'); /* Replace 'working.gif' with the path to your gif */
     background-size: cover;
     background-position: center;
   }
@@ -400,7 +400,7 @@ header {
     }
     /* Header Section */
     header {
-      background-image: url('gradient.jpg'); /* Replace 'working.gif' with the path to your gif */
+      background-image: url('../images/gradient.jpg'); /* Replace 'working.gif' with the path to your gif */
       background-size: cover;
       background-position: center;
       
@@ -493,7 +493,7 @@ header {
     }
     /* Portfolio Section */
     #portfolio {
-      background-image: url('software.gif'); /* Replace 'hero-background.gif' with the path to your gif */
+      background-image: url('../images/software.gif'); /* Replace 'hero-background.gif' with the path to your gif */
     background-size: cover;
     background-position: center;
     font-family: "Josefin Sans", sans-serif;
@@ -542,7 +542,7 @@ header {
 
     /* Education Section */
     #education {
-      background-image: url('studying.jpg'); /* Replace 'working.gif' with the path to your gif */
+      background-image: url('../images/studying.jpg'); /* Replace 'working.gif' with the path to your gif */
       background-size: cover;
       background-position: center;
       color: #fff; /* Light text color */
@@ -588,7 +588,7 @@ header {
 
     /* Work Experience Section */
     #work-experience {
-      background-image: url('working.jpg'); /* Replace 'working.gif' with the path to your gif */
+      background-image: url('../images/working.jpg'); /* Replace 'working.gif' with the path to your gif */
       background-size: cover;
       background-position: center;
       color: #fff; /* Light text color */
@@ -657,7 +657,7 @@ header {
     }
 
     #about {
-      background-image: url('bright.jpeg'); /* Replace 'working.gif' with the path to your gif */
+      background-image: url('../images/bright.jpeg'); /* Replace 'working.gif' with the path to your gif */
       background-size: cover;
       background-position: center;
     }
