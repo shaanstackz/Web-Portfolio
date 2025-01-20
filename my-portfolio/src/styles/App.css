@@ -82,11 +82,12 @@ body {
   }
 }
 /* Header Section */
+/* Header Section */
 header {
   position: relative;
   z-index: 1;
-  background: rgba(10, 10, 10, 0.7) !important;
-  backdrop-filter: blur(3px);
+  background: rgba(10, 10, 10, 0.8) !important; /* Slightly darker for more visibility */
+  backdrop-filter: blur(6px); /* Enhanced blur for background */
   margin: 0;
   padding: 0;
   height: auto;
@@ -96,15 +97,18 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
-  height: 50px;
+  padding: 0 20px;
+  height: 60px; /* Increased height for better spacing */
+  max-width: 1200px; /* Limit the width for large screens */
+  margin: 0 auto; /* Center the container */
 }
 
 header h1 {
-  font-size: 1.5rem;
+  font-size: 1.8rem; /* Adjust font size for larger text */
   margin: 0;
   line-height: 1;
   color: rgba(255, 255, 255, 0.9);
+  font-weight: 700; /* Slightly bolder for better visibility */
 }
 
 header nav ul {
@@ -112,7 +116,7 @@ header nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 12px;
+  gap: 20px; /* Increased gap between items */
 }
 
 header nav ul li {
@@ -120,20 +124,53 @@ header nav ul li {
 }
 
 header nav ul li a {
-  font-size: 0.9rem;
+  font-size: 1.1rem; /* Slightly larger font for navigation links */
   text-decoration: none;
   color: rgba(255, 255, 255, 0.8);
   transition: color 0.3s ease;
+  padding: 8px 16px; /* Added padding to links for better spacing */
+  border-radius: 8px; /* Rounded corners for the links */
 }
 
 header nav ul li a:hover {
-  color: #0f0;
+  color: #0f0; /* Green on hover */
+  background-color: rgba(15, 255, 15, 0.2); /* Subtle green background on hover */
 }
 
 header nav ul svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    height: auto;
+  }
+
+  header h1 {
+    font-size: 1.5rem; /* Smaller font on mobile */
+    text-align: center;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header nav ul li {
+    margin: 10px 0;
+  }
+
+  header nav ul li a {
+    font-size: 1rem; /* Adjust font size on mobile */
+    padding: 10px 20px; /* More padding on mobile */
+  }
+}
+
 
 /* Hero Section */
 .min-h-screen .container {
@@ -234,6 +271,7 @@ p {
 #portfolio {
   position: relative;
   z-index: 1;
+  padding: 50px 0;
   background: rgba(10, 10, 10, 0.7) !important;
   backdrop-filter: blur(3px);
   color: rgba(255, 255, 255, 0.9);
@@ -241,6 +279,91 @@ p {
   font-optical-sizing: auto;
   font-style: normal;
 }
+#portfolio .timeline-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+#portfolio .timeline-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+#portfolio .timeline-item.left {
+  flex-direction: row-reverse;
+}
+
+#portfolio .timeline-item.right {
+  flex-direction: row;
+}
+
+#portfolio .timeline-content {
+  width: 70%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(15, 255, 15, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+#portfolio .timeline-node {
+  width: 24px;
+  height: 24px;
+  background: #00ff00;
+  border: 2px solid rgba(0, 255, 0, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#portfolio .timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #00ff00, transparent);
+  opacity: 0.4;
+  z-index: -1;
+}
+#portfolio .timeline-item .timeline-date {
+  display: inline-block;
+  background: rgba(0, 255, 0, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+#portfolio .timeline-item .timeline-content h3 {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#portfolio .timeline-item .timeline-content p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+#portfolio .timeline-node {
+  width: 24px;
+  height: 24px;
+  background: #00ff00;
+  border: 2px solid #00ff00;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff00;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
 
 
 
@@ -249,7 +372,7 @@ p {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  background: rgba(10, 10, 10, 0.7) !important;
+  background: rgba(10, 10, 10, 0.9) !important; /* Increased opacity */
   backdrop-filter: blur(3px);
 }
 
@@ -269,10 +392,59 @@ p {
   z-index: 1;
 }
 
-/* Card hover effects */
-#education .bg-white\/10:hover {
-  box-shadow: 0 20px 40px rgba(15, 255, 15, 0.2);
+/* Timeline Content */
+#education .timeline-content {
+  background: rgba(0, 0, 0, 0.7);
+  color: white; /* Ensures the text color is white */
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  z-index: 2; /* Make sure it stays above other layers */
 }
+
+#education .timeline-date {
+  display: inline-block;
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Ensure hover states are visible */
+#education .timeline-content:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+/* Adjusting container size */
+#education .timeline-content .flex-shrink-0 {
+  width: 100px !important;  /* Increase width */
+  height: 100px !important; /* Increase height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  border-radius: 8px;
+  padding: 0.25rem;
+  overflow: hidden;
+}
+
+/* Allow the image to grow larger */
+#education .timeline-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: 80px !important;    /* Increase max-width */
+  max-height: 80px !important;   /* Increase max-height */
+  transition: transform 0.3s ease;
+}
+
+
 
 /* Work Experience Section */
 #work-experience {

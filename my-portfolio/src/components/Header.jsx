@@ -29,6 +29,37 @@ const Header = () => {
     return () => clearInterval(cursorInterval);
   }, []);
 
+  // Smooth scroll effect
+  useEffect(() => {
+    const handleClick = (event) => {
+      // Get the target section from the anchor href
+      const targetId = event.target.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        event.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start', // Scroll to the top of the section
+          });
+        }
+      }
+    };
+
+    // Add event listener for the navigation links
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    navLinks.forEach(link => {
+      link.addEventListener('click', handleClick);
+    });
+
+    // Cleanup event listener on unmount
+    return () => {
+      navLinks.forEach(link => {
+        link.removeEventListener('click', handleClick);
+      });
+    };
+  }, []);
+
   return (
     <header className="w-full bg-gradient-to-r from-pink-300 via-fuchsia-200 to-purple-300">
       <div className="container mx-auto px-4 flex justify-between items-center h-12">
@@ -48,12 +79,12 @@ const Header = () => {
         <nav>
           <ul className="flex items-center gap-4 m-0 p-0">
             <li className="list-none">
-              <a href="#about" className="text-gray-700 hover:text-pink-500 transition-colors duration-300 text-sm">
+              <a href="#hero" className="text-gray-700 hover:text-pink-500 transition-colors duration-300 text-sm">
                 About
               </a>
             </li>
             <li className="list-none">
-              <a href="#projects" className="text-gray-700 hover:text-pink-500 transition-colors duration-300 text-sm">
+              <a href="#portfolio" className="text-gray-700 hover:text-pink-500 transition-colors duration-300 text-sm">
                 Projects
               </a>
             </li>

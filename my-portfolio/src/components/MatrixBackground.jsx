@@ -7,6 +7,7 @@ const MatrixBackground = () => {
       background.className = 'code-background';
       document.body.prepend(background);
 
+      // Use brighter colors
       const chars = '0123456789ABCDEF';
       const createColumns = () => {
         background.innerHTML = '';
@@ -17,7 +18,9 @@ const MatrixBackground = () => {
           column.className = 'code-column';
           column.style.left = i * 10 + 'px'; // Closer spacing
           column.style.animationDuration = 8 + Math.random() * 10 + 's'; // Slower animation
-          
+          column.style.color = '#00FFFF'; // Light cyan for bright effect
+          column.style.textShadow = '0 0 10px #00FFFF, 0 0 20px #00FFFF'; // Glowing text effect
+
           let columnText = '';
           const length = 25 + Math.floor(Math.random() * 35); // More characters
           for (let j = 0; j < length; j++) {
