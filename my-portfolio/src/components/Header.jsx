@@ -94,8 +94,8 @@ const Header = () => {
               </a>
             </li>
             <li className="list-none">
-              <a href="#contact" className="text-gray-700 hover:text-pink-500 transition-colors duration-300 text-sm">
-                Contact
+              <a href="#certifications" className="text-gray-700 hover:text-pink-500 transition-colors duration-300 text-sm">
+                Certifications
               </a>
             </li>
             <li>

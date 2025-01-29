@@ -605,3 +605,99 @@ p {
     font-size: 2.5rem;
   }
 }
+
+/* CertiSection */
+#certifications {
+  position: relative;
+  z-index: 1;
+  background: rgba(10, 10, 10, 0.7) !important;
+  backdrop-filter: blur(3px);
+  padding: 80px 0;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+}
+
+/* Company logo container - FIXED SIZE */
+#wcertifications .timeline-content .flex-shrink-0 {
+  width: 48px !important;  /* Force small size */
+  height: 48px !important; /* Force small size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  border-radius: 8px;
+  padding: 0.25rem;
+  overflow: hidden;
+}
+
+/* Image sizing - STRICT CONSTRAINTS */
+#certifications .timeline-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: 40px !important;    /* Strict max width */
+  max-height: 40px !important;   /* Strict max height */
+  transition: transform 0.3s ease;
+}
+
+/* Rest of the styles remain the same */
+#certifications .timeline-line {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  bottom: 2px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #00ff00,
+    #00ff00,
+    transparent
+  );
+  box-shadow: 0 0 15px #00ff00;
+  opacity: 0.6;
+}
+
+#certifications .timeline-node {
+  width: 24px;
+  height: 24px;
+  background: #000;
+  border: 2px solid #00ff00;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff00;
+  transition: all 0.3s ease;
+}
+
+#certifications .timeline-content {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+#certifications .timeline-date {
+  display: inline-block;
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  #certifications .timeline-content .flex-shrink-0 {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  #certifications .timeline-content img {
+    max-width: 32px !important;
+    max-height: 32px !important;
+  }
+}
