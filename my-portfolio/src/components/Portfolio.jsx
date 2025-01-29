@@ -1,197 +1,112 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  BarChart3, 
-  Globe, 
-  Laptop, 
-  Github, 
-  ExternalLink,
-  Gamepad2,
-  Library,
-  Languages,
-  Heart,
-  Plane
-} from 'lucide-react';
-import { PieChart, Pie, Cell, Tooltip } from 'recharts';
+import React from 'react';
+import { Laptop, Plane, Apple, Globe, Diamond, ShoppingCart, Music, Skull, Folder, Pen } from 'lucide-react';
+import { Pie } from 'react-chartjs-2';
+import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale } from 'chart.js';
+import { FaGithub } from 'react-icons/fa';
 
-const GITHUB_USERNAME = 'shaanstackz';
-const REPOS = ['StockFlow', 'Web-Portfolio', 'until-dawn-like-game', 'War-Card', 'MyTranslate', 'A-Healthy-Lifestyle', 'Flight-Reservation-System'];
+ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale);
 
-// More distinctive colors for better visibility
-const LANGUAGE_COLORS = {
-  JavaScript: '#F7DF1E',
-  Python: '#3776AB',
-  TypeScript: '#3178C6',
-  CSS: '#563D7C',
-  HTML: '#E34C26',
-  PHP: '#777BB4',
-  Java: '#007396',
-  Ruby: '#CC342D',
-  Default: '#6B7280'
+const pieData = {
+  MyTranslate: { labels: ['Python'], datasets: [{ data: [100], backgroundColor: ['#36A2EB'] }] },
+  AHealthyLifestyle: { labels: ['Python'], datasets: [{ data: [100], backgroundColor: ['#36A2EB'] }] },
+  StockFlow: { labels: ['JavaScript', 'Python', 'TypeScript', 'Other'], datasets: [{ data: [43.9, 37.5, 10.2, 8.4], backgroundColor: ['#FF6384', '#36A2EB', '#4BC0C0', '#9966FF'] }] },
+  UntilDawn: { labels: ['Python'], datasets: [{ data: [100], backgroundColor: ['#36A2EB'] }] },
+  War: { labels: ['Rust'], datasets: [{ data: [100], backgroundColor: ['#D67D3E'] }] },
+  Flight: { labels: ['Java'], datasets: [{ data: [100], backgroundColor: ['#007396'] }] },
+  Room: { labels: ['Python', 'HTML', 'Other'], datasets: [{ data: [53.4, 42.3, 4.3], backgroundColor: ['#36A2EB', '#E34F26', '#9966FF'] }] },
+  Micro: { labels: ['HTML', 'jQuery', 'MySQL', 'Angular', 'Other'], datasets: [{ data: [30.1, 18.7, 15.6, 25.3, 10.3], backgroundColor: ['#E34F26', '#0769AD', '#4479A1', '#DD0031', '#9966FF'] }] },
+  Site: { labels: ['HTML', 'CSS', 'Other'], datasets: [{ data: [50.1, 47.0, 2.9], backgroundColor: ['#E34F26', '#264DE4', '#9966FF'] }] }
 };
 
-// Helper function to format project name
-const formatProjectName = (name) => {
-  // Check if 'name' is a valid string
-  if (typeof name !== 'string' || name.trim() === '') {
-    return '';
-  }
-
-  return name
-    .replace(/-/g, ' ') // Replace hyphens with spaces
-    .split(' ') // Split by spaces
-    .map(word => {
-      // Ensure that word is a non-empty string
-      if (word.length > 0) {
-        return word.charAt(0).toUpperCase() + word.slice(1); // Capitalize the first letter
-      }
-      return ''; // Handle any empty words, though it shouldn't happen with the .split(' ') approach
-    })
-    .join(' '); // Join the words back into a single string
-};
-
-
-const getProjectIcon = (projectName) => {
-  if (!projectName) {
-    return <Laptop className="w-5 h-5" />; // Default icon for undefined names
-  }
-
-  const name = projectName.toLowerCase();
-  switch (name) {
-    case 'stockflow':
-      return <BarChart3 className="w-5 h-5" />;
-    case 'web-portfolio':
-      return <Globe className="w-5 h-5" />;
-    case 'until-dawn-like-game':
-      return <Gamepad2 className="w-5 h-5" />;
-    case 'war-card':
-      return <Library className="w-5 h-5" />;
-    case 'mytranslate':
-      return <Languages className="w-5 h-5" />;
-    case 'a-healthy-lifestyle':
-      return <Heart className="w-5 h-5" />;
-    case 'flight-reservation-system':
-      return <Plane className="w-5 h-5" />;
-    default:
-      return <Laptop className="w-5 h-5" />;
-  }
-};
+const projects = [
+  { name: 'StockFlow', icon: <Laptop className="w-5 h-5" />, description: 'Full-stack inventory management application.', githubLink: 'https://github.com/shaanstackz/StockFlow', chartData: pieData.StockFlow },
+  { name: 'TorontoMicro', icon: <ShoppingCart className="w-5 h-5" />, description: 'Customer service web application.', chartData: pieData.Micro },
+  { name: 'RoomMate', icon: <Pen className='w-5 h-5' />, description: 'Meeting room booking system using AI.', githubLink: 'https://github.com/shaanstackz/FGF-Hackathon', chartData: pieData.Room },
+  { name: 'Site Portfolio', icon: <Folder className="w-5 h-5" />, description: 'This specific website itself.', githubLink: 'https://github.com/shaanstackz/Web-Portfolio', chartData: pieData.Site },
+  { name: 'Flight Reservation System', icon: <Plane className="w-5 h-5" />, description: 'Flight Reservation System developed using Java.', githubLink: 'https://github.com/shaanstackz/Flight-Reservation-System', chartData: pieData.Flight },
+  { name: 'A Healthy Lifestyle', icon: <Apple className="w-5 h-5" />, description: 'An app promoting a healthy lifestyle.', githubLink: 'https://github.com/shaanstackz/A-Healthy-Lifestyle', chartData: pieData.AHealthyLifestyle },
+  { name: 'MyTranslate', icon: <Globe className="w-5 h-5" />, description: 'English-Dutch translation app.', githubLink: 'https://github.com/shaanstackz/MyTranslate', chartData: pieData.MyTranslate },
+  { name: 'Until Dawn Horror Game', icon: <Skull className="w-5 h-5" />, description: 'Dark horror game inspired by "Until Dawn."', githubLink: 'https://github.com/shaanstackz/until-dawn-like-game', chartData: pieData.UntilDawn },
+  { name: 'War Card Game', icon: <Diamond className="w-5 h-5" />, description: 'Classic card game created in Rust.', githubLink: 'https://github.com/shaanstackz/War-Card', chartData: pieData.War }
+];
 
 const Portfolio = () => {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    const fetchRepoData = async () => {
-      try {
-        const projectData = await Promise.all(
-          REPOS.map(async (repo) => {
-            const repoResponse = await fetch(
-              `https://api.github.com/repos/${GITHUB_USERNAME}/${repo}`
-            );
-            const repoData = await repoResponse.json();
-
-            const languageResponse = await fetch(
-              `https://api.github.com/repos/${GITHUB_USERNAME}/${repo}/languages`
-            );
-            const languageData = await languageResponse.json();
-
-            const totalBytes = Object.values(languageData).reduce((a, b) => a + b, 0);
-
-            const languages = Object.entries(languageData).map(([name, bytes]) => ({
-              name,
-              value: Number(((bytes / totalBytes) * 100).toFixed(1)),
-              color: LANGUAGE_COLORS[name] || LANGUAGE_COLORS.Default
-            }));
-
-            return {
-              ...repoData,
-              languages,
-            };
-          })
-        );
-
-        setProjects(projectData);
-      } catch (error) {
-        console.error('Error fetching GitHub data:', error);
-      }
-    };
-
-    fetchRepoData();
-  }, []);
+  const sortedProjects = [...projects].sort((a, b) => (b.chartData.labels?.length || 0) - (a.chartData.labels?.length || 0));
 
   return (
-    <section id="portfolio" className="py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">Portfolio</h2>
+    <section id="portfolio" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto px-6">
+        <h2 className="text-4xl font-bold mb-12 text-center text-gray-800">
+          My Projects
+          <div className="w-20 h-1 bg-blue-500 mx-auto mt-4"></div>
+        </h2>
         
-        <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-1 bg-gray-300"></div> {/* Timeline line */}
-          <div className="space-y-8 pl-10">
-            {projects.map((project, index) => (
-              <div key={project.id} className="relative">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center border-2 border-green-500">
-                    {getProjectIcon(project.name)}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sortedProjects.map((project, index) => (
+            <div 
+              key={index} 
+              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+            >
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-blue-50 rounded-lg">
+                    {project.icon}
                   </div>
-                  <h3 className="text-xl font-bold">{formatProjectName(project.name)}</h3>
+                  <h3 className="text-xl font-bold text-gray-800">
+                    {project.name}
+                  </h3>
                 </div>
+                
+                <p className="text-gray-600 mb-4 min-h-[48px]">
+                  {project.description}
+                </p>
 
-                <div className="bg-white p-6 rounded-lg shadow-lg">
-                  <div className="mb-6">
-                    <div className="w-full h-64 flex items-center justify-center">
-                      <PieChart width={300} height={250}>
-                        <Pie
-                          data={project.languages}
-                          dataKey="value"
-                          nameKey="name"
-                          cx="50%"
-                          cy="50%"
-                          outerRadius={80}
-                          label={({ name, value }) => `${value}%`}
-                        >
-                          {project.languages.map((entry) => (
-                            <Cell key={entry.name} fill={entry.color} stroke="#fff" strokeWidth={2} />
-                          ))}
-                        </Pie>
-                        <Tooltip formatter={(value, name) => [`${value}%`, name]} />
-                      </PieChart>
-                    </div>
+                {project.githubLink ? (
+                  <a 
+                    href={project.githubLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors duration-200 mb-6"
+                  >
+                    <FaGithub className="w-5 h-5" />
+                    <span>View on GitHub</span>
+                  </a>
+                ) : (
+                  <p className="text-gray-500 italic mb-6">Private Repository</p>
+                )}
 
-                    <div className="grid grid-cols-2 gap-2 mt-4">
-                      {project.languages.map((lang) => (
-                        <div key={lang.name} className="flex items-center gap-2 p-2 rounded">
-                          <div className="w-4 h-4 rounded" style={{ backgroundColor: lang.color }} />
-                          <span className="text-sm">{lang.name} ({lang.value}%)</span>
-                        </div>
-                      ))}
-                    </div>
+                {project.chartData && (
+                  <div className="mt-4 mx-auto" style={{ height: '200px' }}>
+                    <Pie 
+                      data={project.chartData} 
+                      options={{
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                          legend: {
+                            position: 'bottom',
+                            labels: {
+                              padding: 20,
+                              usePointStyle: true,
+                              font: {
+                                size: 11
+                              }
+                            }
+                          },
+                          tooltip: {
+                            callbacks: {
+                              label: (tooltipItem) => `${tooltipItem.label}: ${tooltipItem.raw}%`,
+                            },
+                            padding: 12
+                          },
+                        },
+                      }}
+                    />
                   </div>
-
-                  <div className="flex gap-4 mt-4">
-                    <a
-                      href={project.html_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-blue-600 hover:text-blue-800"
-                    >
-                      <Github className="w-4 h-4" />
-                      View Source
-                    </a>
-                    {project.homepage && (
-                      <a
-                        href={project.homepage}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-blue-600 hover:text-blue-800"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Live Demo
-                      </a>
-                    )}
-                  </div>
-                </div>
+                )}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
