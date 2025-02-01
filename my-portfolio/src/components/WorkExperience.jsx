@@ -33,7 +33,7 @@ const WorkExperience = () => {
       title: "Software Developer",
       company: "Toronto Transit Commission (TTC)",
       logo: ttcLogo,
-      date: "May 2023 - August 2023",
+      date: "May 2022 - August 2022",
       location: "Toronto, ON, Canada",
       achievements: [
         "Developed an onboarding program using Microsoft Visual Basic to facilitate the seamless integration of individuals entering and exiting the data center...",

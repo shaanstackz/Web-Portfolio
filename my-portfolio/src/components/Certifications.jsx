@@ -5,10 +5,10 @@ import powerPlatformLogo from '../images/microsoft.png'; // Make sure to add the
 const Certifications = () => {
   const certifications = [
     {
-      title: "Microsoft Power Platform Certification",
+      title: "Microsoft Power Platform Fundamentals",
       issuer: "Microsoft",
       logo: powerPlatformLogo,
-      date: "October 2024",
+      date: "January 2025",
       description: "Certified in Microsoft Power Platform, demonstrating expertise in Power Apps, Power Automate, Power BI, and Dataverse for building end-to-end business solutions.",
       details: [
         "Developed custom Power Apps to automate workflows and enhance business processes.",
