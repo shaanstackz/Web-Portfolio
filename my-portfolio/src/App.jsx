@@ -25,6 +25,7 @@ const App = () => {
       <WorkExperience />
       <TechStack />
       <Certifications />
+      <TechStack />
       <MatrixBackground />
     </>
   );
