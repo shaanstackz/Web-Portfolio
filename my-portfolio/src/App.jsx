@@ -5,7 +5,7 @@ import Education from "./components/Education";
 import Portfolio from "./components/Portfolio";
 import WorkExperience from "./components/WorkExperience";
 import Certifications from "./components/Certifications"
-import TechStack  from "./components/TechStack";
+import TechStack from "./components/TechStack";
 
 import "./styles/App.css"; // Import your styles
 import MatrixBackground from './components/MatrixBackground';
