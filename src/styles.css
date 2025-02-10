@@ -236,37 +236,58 @@ header {
     margin-bottom: 20px;
   }
   
-/* Contact Section */
-#contact {
+  /* Contact Section */
+  #contact {
     background-color: #333;
     color: #fff;
     padding: 80px 0;
+    text-align: center; /* Center align text for better readability */
   }
-  
+
   .contact-info {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* Center align items horizontally */
+    margin-top: 40px; /* Add space between contact info and top padding */
   }
-  
+
   .contact-item {
     margin: 0 20px;
     text-align: center;
   }
-  
+
   .contact-item p {
-    margin: 0; /* Remove default margin from paragraph */
+    margin: 10px 0; /* Adjust spacing around paragraphs */
+    font-size: 16px; /* Increase font size for better readability */
   }
-  
+
   .contact-item a,
   .contact-item p {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for link hover */
   }
-  
+
   .contact-item a:hover {
-    text-decoration: underline;
+    color: #3498db; /* Change link color on hover */
   }
+
+  .contact-item .icon {
+    font-size: 24px; /* Adjust icon size */
+    margin-bottom: 10px; /* Add space between icon and text */
+  }
+
+  .contact-item .icon:before {
+    margin-right: 10px; /* Space between icon and text */
+  }
+
+  .contact-item .title {
+    font-size: 18px; /* Title font size */
+    font-weight: bold; /* Bold title for emphasis */
+    margin-bottom: 5px; /* Add space below title */
+  }
+
+
 
   #about {
     background-image: url('./images/bright.jpeg'); /* Replace 'working.gif' with the path to your gif */
@@ -629,12 +650,14 @@ header {
       background-color: #333;
       color: #fff;
       padding: 80px 0;
+      text-align: center; /* Center align text for better readability */
     }
 
     .contact-info {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: center; /* Center align items horizontally */
+      margin-top: 40px; /* Add space between contact info and top padding */
     }
 
     .contact-item {
@@ -643,18 +666,36 @@ header {
     }
 
     .contact-item p {
-      margin: 0; /* Remove default margin from paragraph */
+      margin: 10px 0; /* Adjust spacing around paragraphs */
+      font-size: 16px; /* Increase font size for better readability */
     }
 
     .contact-item a,
     .contact-item p {
       color: #fff;
       text-decoration: none;
+      transition: color 0.3s ease; /* Smooth transition for link hover */
     }
 
     .contact-item a:hover {
-      text-decoration: underline;
+      color: #3498db; /* Change link color on hover */
     }
+
+    .contact-item .icon {
+      font-size: 24px; /* Adjust icon size */
+      margin-bottom: 10px; /* Add space between icon and text */
+    }
+
+    .contact-item .icon:before {
+      margin-right: 10px; /* Space between icon and text */
+    }
+
+    .contact-item .title {
+      font-size: 18px; /* Title font size */
+      font-weight: bold; /* Bold title for emphasis */
+      margin-bottom: 5px; /* Add space below title */
+    }
+
 
     #about {
       background-image: url('./images/bright.jpeg'); /* Replace 'working.gif' with the path to your gif */
